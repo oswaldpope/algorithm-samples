@@ -41,9 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Graph.cs" />
-    <Compile Include="Recursion.cs" />
     <Compile Include="General.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recursion\RatInAMaze.cs" />
+    <Compile Include="Recursion\StringPermutations.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Recursion\RateInAMaze.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

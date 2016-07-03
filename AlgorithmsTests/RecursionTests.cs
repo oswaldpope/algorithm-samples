@@ -1,10 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Algorithms;
+﻿using Algorithms.Recursion;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Algorithms.Tests
 {
@@ -14,15 +11,21 @@ namespace Algorithms.Tests
         [TestMethod()]
         public void PrintAllPermutationsOfStringTest()
         {
-            Assert.AreEqual(6, Recursion.PrintAllPermutationsOfString("ABC").Count());
+            Assert.AreEqual(6, new StringPermutations().PrintAllPermutationsOfString("ABC").Count());
         }
 
         [TestMethod()]
         public void RateInAMazeTest()
         {
             int[,] maze = new[,] { { 1, 0, 0, 0 }, { 1, 1, 0, 1 }, { 0, 1, 0, 0 }, { 1, 1, 1, 1 } };
-            var sol = Recursion.RateInAMaze(maze);
-            Assert.Fail();
+            var sol = new RatInAMaze().SolveRatInAMaze(maze);
+            int[] oneDimension = new int[sol.Length];
+            var i = 0;
+            foreach (var item in sol)
+            {
+                oneDimension[i++] = item;
+            }
+            Assert.AreEqual("1,0,0,0,1,1,0,0,0,1,0,0,0,1,1,1", String.Join(",", oneDimension));
         }
     }
 }

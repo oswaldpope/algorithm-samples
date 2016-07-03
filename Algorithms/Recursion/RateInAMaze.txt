@@ -1,0 +1,30 @@
+﻿         Following is the solution matrix(output of program) for the above input matrx.
+        
+                 {1, 0, 0, 0}
+                 {1, 1, 0, 0}
+                 {0, 1, 0, 0}
+                 {0, 1, 1, 1}
+  All enteries in solution path are marked as 1.
+ Naive Algorithm
+ The Naive Algorithm is to generate all paths from source to destination and one by one check if the generated path satisfies the constraints.
+ 
+ while there are untried paths
+ {
+             generate the next path
+    if this path has all blocks as 1
+    {
+                 print this path;
+             }
+         }
+         Backtrackng Algorithm
+ 
+ If destination is reached
+     print the solution matrix
+ Else
+    a) Mark current cell in solution matrix as 1. 
+    b) Move forward in horizontal direction and recursively check if this 
+        move leads to a solution.
+    c) If the move chosen in the above step doesn't lead to a solution
+        then move down and check if  this move leads to a solution.
+    d) If none of the above solutions work then unmark this cell as 0 
+        (BACKTRACK) and return false.
